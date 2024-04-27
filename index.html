@@ -1,0 +1,266 @@
+ <!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            border: 2px solid black;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            background-color: gray;
+        }
+
+        .some td {
+            border: 0;
+            background-color: white;
+        }
+
+        .Alpha {
+            background-color: white;
+            border: 0;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        ul {
+            display: flex;
+            color: white;
+            list-style-type: none;
+        }
+
+        li {
+            margin: 1.5vw 2vw;
+        }
+
+        body {
+            background-color: #141414;
+            margin: auto;
+        }
+        table{
+            margin: auto;
+            background: #343434;
+            border: 0.5vw solid #343434;
+        }
+        select {
+            width: 250px;
+            height: 35px;
+            padding: 4px;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+            display: inline-block;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            cursor: pointer;
+        }
+
+        label {
+            position: relative;
+        }
+
+        label:after {
+            content: '<>';
+            font: 11px "Consolas", monospace;
+            color: #666;
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+            right: 8px;
+            top: 2px;
+            padding: 0 0 2px;
+            border-bottom: 1px solid #ddd;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        label:before {
+            content: '';
+            right: 6px;
+            top: 0px;
+            width: 20px;
+            height: 20px;
+            background: #eee;
+            position: absolute;
+            pointer-events: none;
+            display: block;
+        }
+        .cont{
+            margin: 2vw 24vw;
+        }
+        footer{
+            background-color: #1f1f1f;
+            display: flex;
+            justify-content: space-around;
+        }
+        section{
+            margin: 2vw 0;
+        }
+        img.image.fill {
+            height: 26vw;
+        }
+        .imgs{
+                display: flex;
+        }
+        .layout{
+          display:block;
+          color: white;
+          text-align: center;
+          margin-right: auto;
+          margin-left: auto;
+          font-size: 30px;
+          font-weight: bold;
+        }
+    </style>
+    <script src="index.js"></script>
+
+</head>
+
+<body onload="Load()">
+    <header>
+        <nav>
+            <img style="height: 6vw;" src="logo.png" alt="">
+        </nav>
+        <nav>
+            <ul>
+
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="cont">
+            <label for=""> <select oninput="CheckColor()" name="" id="selectMovie"> </select></label>
+            <label for=""> <select oninput="CheckColor()" name="" id="selectDay"> <option onclick="CheckColor()">14.3.2021</option><option onclick="CheckColor()">15.3.2021</option><option onclick="CheckColor()">16.3.2021</option><option onclick="CheckColor()">17.3.2021</option><option onclick="CheckColor()">18.3.2021</option><option selected="" onclick="CheckColor()">19.3.2021</option><option onclick="CheckColor()">20.3.2021</option><option onclick="CheckColor()">21.3.2021</option><option onclick="CheckColor()">22.3.2021</option><option onclick="CheckColor()">23.3.2021</option><option onclick="CheckColor()">24.3.2021</option></select></label>
+            <label for=""> <select oninput="CheckColor()" name="" id="selectMin"> <option>10.00</option><option>12.00</option><option>14.00</option><option>16.00</option><option>18.00</option><option>20.00</option></select></label>
+        </div>
+        <p class="layout">Layout</p>
+        <div class="imgs">
+            <img data-tip="true" class="image   fill" id="ban" style="margin-left: 2vw;" src="https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/ad97f1ee-c2f1-49b8-8264-0417c8a17362/800x800">
+            <table id="mytable">
+                <tbody><tr class="some">
+                    <td></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <td class="Alpha">A</td>
+                    <td id="A1" onclick="ChangeColor(id)" style="background-color: gray;">1</td>
+                    <td onclick="ChangeColor(id)" id="A2" style="background-color: gray;">2</td>
+                    <td onclick="ChangeColor(id)" id="A3" style="background-color: gray;">3</td>
+                    <td onclick="ChangeColor(id)" id="A4" style="background-color: gray;">4</td>
+                    <td onclick="ChangeColor(id)" id="A5" style="background-color: gray;">5</td>
+                    <td onclick="ChangeColor(id)" id="A6" style="background-color: gray;">6</td>
+                    <td onclick="ChangeColor(id)" id="A7" style="background-color: gray;">7</td>
+                    <td onclick="ChangeColor(id)" id="A8" style="background-color: gray;">8</td>
+                    <td onclick="ChangeColor(id)" id="A9" style="background-color: gray;">9</td>
+                    <td onclick="ChangeColor(id)" id="A10" style="background-color: gray;">10</td>
+                    <td onclick="ChangeColor(id)" id="A11" style="background-color: gray;">11</td>
+
+                </tr>
+                <tr>
+                    <td class="Alpha" style="background-color: white;">B</td>
+                    <td id="B1" onclick="ChangeColor(id)" style="background-color: gray;">1</td>
+                    <td onclick="ChangeColor(id)" id="B2" style="background-color: gray;">2</td>
+                    <td onclick="ChangeColor(id)" id="B3" style="background-color: gray;">3</td>
+                    <td onclick="ChangeColor(id)" id="B4" style="background-color: gray;">4</td>
+                    <td onclick="ChangeColor(id)" id="B5" style="background-color: gray;">5</td>
+                    <td onclick="ChangeColor(id)" id="B6" style="background-color: gray;">6</td>
+                    <td onclick="ChangeColor(id)" id="B7" style="background-color: gray;">7</td>
+                    <td onclick="ChangeColor(id)" id="B8" style="background-color: gray;">8</td>
+                    <td onclick="ChangeColor(id)" id="B9" style="background-color: gray;">9</td>
+                    <td onclick="ChangeColor(id)" id="B10" style="background-color: gray;">10</td>
+                    <td onclick="ChangeColor(id)" id="B11" style="background-color: gray;">11</td>
+                </tr>
+                <tr>
+                    <td class="Alpha" style="background-color: white;">C</td>
+                    <td id="C1" onclick="ChangeColor(id)" style="background-color: gray;">1</td>
+                    <td onclick="ChangeColor(id)" id="C2" style="background-color: gray;">2</td>
+                    <td onclick="ChangeColor(id)" id="C3" style="background-color: gray;">3</td>
+                    <td onclick="ChangeColor(id)" id="C4" style="background-color: gray;">4</td>
+                    <td onclick="ChangeColor(id)" id="C5" style="background-color: gray;">5</td>
+                    <td onclick="ChangeColor(id)" id="C6" style="background-color: gray;">6</td>
+                    <td onclick="ChangeColor(id)" id="C7" style="background-color: gray;">7</td>
+                    <td onclick="ChangeColor(id)" id="C8" style="background-color: gray;">8</td>
+                    <td onclick="ChangeColor(id)" id="C9" style="background-color: gray;">9</td>
+                    <td onclick="ChangeColor(id)" id="C10" style="background-color: gray;">10</td>
+                    <td onclick="ChangeColor(id)" id="C11" style="background-color: gray;">11</td>
+                </tr>
+                <tr>
+                    <td class="Alpha" style="background-color: white;">D</td>
+                    <td id="D1" onclick="ChangeColor(id)" style="background-color: gray;">1</td>
+                    <td onclick="ChangeColor(id)" id="D2" style="background-color: gray;">2</td>
+                    <td onclick="ChangeColor(id)" id="D3" style="background-color: gray;">3</td>
+                    <td onclick="ChangeColor(id)" id="D4" style="background-color: gray;">4</td>
+                    <td onclick="ChangeColor(id)" id="D5" style="background-color: gray;">5</td>
+                    <td onclick="ChangeColor(id)" id="D6" style="background-color: gray;">6</td>
+                    <td onclick="ChangeColor(id)" id="D7" style="background-color: gray;">7</td>
+                    <td onclick="ChangeColor(id)" id="D8" style="background-color: gray;">8</td>
+                    <td onclick="ChangeColor(id)" id="D9" style="background-color: gray;">9</td>
+                    <td onclick="ChangeColor(id)" id="D10" style="background-color: gray;">10</td>
+                    <td onclick="ChangeColor(id)" id="D11" style="background-color: gray;">11</td>
+                </tr>
+                <tr>
+                    <td class="Alpha" style="background-color: white;">E</td>
+                    <td id="E1" onclick="ChangeColor(id)" style="background-color: gray;">1</td>
+                    <td onclick="ChangeColor(id)" id="E2" style="background-color: gray;">2</td>
+                    <td onclick="ChangeColor(id)" id="E3" style="background-color: gray;">3</td>
+                    <td onclick="ChangeColor(id)" id="E4" style="background-color: gray;">4</td>
+                    <td onclick="ChangeColor(id)" id="E5" style="background-color: gray;">5</td>
+                    <td onclick="ChangeColor(id)" id="E6" style="background-color: gray;">6</td>
+                    <td onclick="ChangeColor(id)" id="E7" style="background-color: gray;">7</td>
+                    <td onclick="ChangeColor(id)" id="E8" style="background-color: gray;">8</td>
+                    <td onclick="ChangeColor(id)" id="E9" style="background-color: gray;">9</td>
+                    <td onclick="ChangeColor(id)" id="E10" style="background-color: gray;">10</td>
+                    <td onclick="ChangeColor(id)" id="E11" style="background-color: gray;">11</td>
+                </tr>
+                <tr>
+                    <td class="Alpha" style="background-color: white;">F</td>
+                    <td id="F1" onclick="ChangeColor(id)" style="background-color: gray;">1</td>
+                    <td onclick="ChangeColor(id)" id="F2" style="background-color: gray;">2</td>
+                    <td onclick="ChangeColor(id)" id="F3" style="background-color: gray;">3</td>
+                    <td onclick="ChangeColor(id)" id="F4" style="background-color: gray;">4</td>
+                    <td onclick="ChangeColor(id)" id="F5" style="background-color: gray;">5</td>
+                    <td onclick="ChangeColor(id)" id="F6" style="background-color: gray;">6</td>
+                    <td onclick="ChangeColor(id)" id="F7" style="background-color: gray;">7</td>
+                    <td onclick="ChangeColor(id)" id="F8" style="background-color: gray;">8</td>
+                    <td onclick="ChangeColor(id)" id="F9" style="background-color: gray;">9</td>
+                    <td onclick="ChangeColor(id)" id="F10" style="background-color: gray;">10</td>
+                    <td onclick="ChangeColor(id)" id="F11" style="background-color: gray;">11</td>
+                </tr>
+            </tbody></table>
+            <img data-tip="true" class="image   fill" id="ban2" style="margin-right: 2vw;" src="https://i.pinimg.com/originals/0e/39/d5/0e39d5956e5370dcd7fca84dcb641a58.jpg">
+        </div>
+        <br>
+        <table style="background: bottom;border: 0;color: white;">
+            <tbody><tr>
+                <th>RESERVED <b style="font-size: 2vw;">-</b> </th>
+                <td style="background:red"></td>
+            </tr>
+            <tr>
+                <th>FREE <b style="font-size: 1.8vw;">-</b> </th>
+                <td></td>
+            </tr>
+        </tbody></table>
+    </section>
+    <footer>
+        <img style="height: 6vw;" src="logo.png" alt="">
+    </footer>
+
+
+</body></html>
