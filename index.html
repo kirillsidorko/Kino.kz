@@ -80,7 +80,7 @@
             position: absolute;
             pointer-events: none;
         }
-
+        /* Decorative element for dropdown */
         label:before {
             content: '';
             right: 6px;
@@ -92,6 +92,7 @@
             pointer-events: none;
             display: block;
         }
+        /* Container for dropdowns, centered and with margins */
         .cont{
             margin: 2vw 24vw;
         }
@@ -123,7 +124,7 @@
 
 </head>
 
-<body onload="Load()">
+<body onload="Load()">  /* The 'Load' function is called when the page loads*/
     <header>
         <nav>
             <img style="height: 6vw;" src="logo.png" alt="">
@@ -139,11 +140,13 @@
             <label for=""> <select oninput="CheckColor()" name="" id="selectMovie"> </select></label>
             <label for=""> <select oninput="CheckColor()" name="" id="selectDay"> <option onclick="CheckColor()">14.3.2021</option><option onclick="CheckColor()">15.3.2021</option><option onclick="CheckColor()">16.3.2021</option><option onclick="CheckColor()">17.3.2021</option><option onclick="CheckColor()">18.3.2021</option><option selected="" onclick="CheckColor()">19.3.2021</option><option onclick="CheckColor()">20.3.2021</option><option onclick="CheckColor()">21.3.2021</option><option onclick="CheckColor()">22.3.2021</option><option onclick="CheckColor()">23.3.2021</option><option onclick="CheckColor()">24.3.2021</option></select></label>
             <label for=""> <select oninput="CheckColor()" name="" id="selectMin"> <option>10.00</option><option>12.00</option><option>14.00</option><option>16.00</option><option>18.00</option><option>20.00</option></select></label>
+        /*Options for days, with a default selected value*/
         </div>
+   
         <p class="layout">Layout</p>
         <div class="imgs">
             <img data-tip="true" class="image   fill" id="ban" style="margin-left: 2vw;" src="https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/ad97f1ee-c2f1-49b8-8264-0417c8a17362/800x800">
-            <table id="mytable">
+            <table id="mytable"> /*Table rows and cells representing seats, with onclick event to change color when clicked*/
                 <tbody><tr class="some">
                     <td></td>
                     <td>1</td>
@@ -253,7 +256,7 @@
                 <td style="background:red"></td>
             </tr>
             <tr>
-                <th>FREE <b style="font-size: 1.8vw;">-</b> </th>
+                <th>FREE <b style="font-size: 1.8vw;">-</b> </th> */No color indicates free seats*/
                 <td></td>
             </tr>
         </tbody></table>
