@@ -10,11 +10,12 @@ let now = new Date()
 var days = now.getUTCDate();
 var min = now.getHours();
 function Load() {
-    var month = now.getUTCMonth() + 1;
-    var day = now.getUTCDate() - 4;
-    var year = now.getUTCFullYear();
+    // The function runs when the page loads and sets up the dropdowns and table
+    var month = now.getUTCMonth() + 1; // Gets the current month (0-indexed, so add 1)
+    var day = now.getUTCDate() - 4; 
+    var year = now.getUTCFullYear(); 
     for (var j = 0; j < 11; j++) {
-        var opt = document.createElement("option");
+        var opt = document.createElement("option"); // Creates a new option element
         nd = document.createTextNode(String((Number(day) + j) + "." + month + "." + year));
         if ((localStorage['days'] == String((Number(day) + j) + "." + month + "." + year) && localStorage["days"] != undefined) || day+j == now.getUTCDate()+1) {
             opt.setAttribute("selected", "");
@@ -23,6 +24,7 @@ function Load() {
         opt.appendChild(nd);
         document.getElementById("selectDay").appendChild(opt);
     }
+    // Sets up the time options
     for (var i = 10; i <= 20; i += 2) {
         opt2 = document.createElement("option");
         nd = document.createTextNode(String(i + ".00"));
@@ -48,12 +50,13 @@ function Load() {
     var message = "";
     var txte = document.getElementById("selectMovie").value + " " + document.getElementById("selectDay").value + " " + document.getElementById("selectMin").value;
     if(localStorage[txte] != undefined){
+    // Checks if there are any saved seat reservations for the selected options
         for(var i = 0;i<localStorage[txte].length; i++){
             if(localStorage[txte][i] != " "){
                 message += localStorage[txte][i];
                 if(Number(i) == Number(localStorage[txte].length)-1){
                     td = document.getElementById(message);
-                    td.style.backgroundColor = "red";
+                    td.style.backgroundColor = "red"; // Sets the reserved seats to red
                     message = "";
                 }
             }else{
@@ -67,6 +70,7 @@ function Load() {
 }
 
 function CheckColor() {
+    // This function checks and updates the colors of the seats based on user selection
     localStorage.setItem('days', document.getElementById("selectDay").value );
     localStorage.setItem('hours', document.getElementById("selectMin").value );
     localStorage.setItem('movie', document.getElementById("selectMovie").value );
@@ -107,6 +111,7 @@ function CheckColor() {
     }
 }
 function ChangeColor(id) {
+     // This function changes the color of a seat when clicked
     var str = "";
     var str2 = "";
     for(var i =0; i<document.getElementById("selectDay").value.length; i++){
